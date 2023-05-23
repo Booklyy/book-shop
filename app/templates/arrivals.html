@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<div class="row p-5" id="featured" data-aos="fade-down-right">
+    <div class="col-md-12 text-center">
+        <h2 class="text-uppercase fw-bold"><span class="text-info">New</span> Arivals</h2>
+        <p class="text-dark fw-bold bg-info">" If you love books and if you love to read, you probably like nothing better than collecting books. "</p>
+    </div>
+    
+    <div class="row p-5">
+    {% for pro in object_list %}
+        
+        <div class="col-md-4">
+            <div class="col-md-12 arivalsdiv">
+                <div class="text-center">
+                    <img src="/media/{{ pro.photo }}"  />
+                </div>
+                <div class="p-3 bg-dark text-light">
+                    <h4>{{ pro.name }}</h4>
+                    <div class="d-flex text-danger">
+                        <h2 class="pe-4">&#8377;{{ pro.sellingprice }}</h2>
+                        <h4 class="text-decoration-line-through ">&#8377; {{ pro.mrp }}</h4>
+                    </div>
+                    <button class="btn btn-info text-light fw-bold rounded-5">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    
+    {% endfor %} 
+
+    </div>
+
+</div>
+
+{% endblock %}

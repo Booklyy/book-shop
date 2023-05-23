@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Your Shopping Cart| Checkout
+{% endblock %}
+
+{% block content %}
+    <div class="p-5"id="bg1">
+        <div class="page-heading header-text p-3" >
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center text-uppercase fw-bold p-3">Home/Order Create</h1>
+                <h3 class="text-center text-uppercase fw-bold p-3"><span>Checkout</span></h3>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="row p-5"id="ordercreate">
+            <div class="col-md-7" id="loginform">
+                <h4 class="page-header text-uppercase" style="text-align:center; font-size:39px; color:red;">Checkout</h4>
+                <form action="" method="post" class="forms">
+                    {% csrf_token %}
+                    {{ form.as_p }}<br>
+                    
+                    <center><button class="btn btn-info btnlogin">Submit Order</button></center>
+                    <!--<center><input type="submit" id="submitbtn"  class="btn btn-primary text-light fw-bold" value="Submit Order"></center>
+                    -->
+                    </form>
+            </div>
+            <div class="col-md-5">
+                <div class="page-header text-uppercase fw-bold" style="color:red; font-size:30px;">
+                    Your Order
+                </div>
+                <ul class="list-group">
+                    {% for item in cart %}
+                        <li class="list-group-item">
+                        {{ item.quantity }}x {{ item.product.name }}
+                        <span>Rs. {{ item.total_price }}</span>
+                        </li>
+                    {% endfor %}
+
+                <li class="list-group-item active">Total Cost: Rs. {{ cart.get_total_price }}</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

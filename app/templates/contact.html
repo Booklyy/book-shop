@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="p-2">
+<div class="row banner text-center text-light p-3">
+<div class="col-md-12">
+<h1 class="fw-bold">CONTACT</h1>
+<!-- <div class="col-md-4 offset-5">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb p-5">
+      <li class="breadcrumb-item"><a href="/home/">Home</a></li>
+      <li class="breadcrumb-item active text-light" aria-current="page">Contact</li>
+    </ol>
+</nav>
+</div> -->
+</div>
+</div>
+<div class="row p-3">
+<div class="col-md-5 p-5 bg-info text-light">
+<h1 class="text-info text-center bg-light"> Request a Call Back</h1>
+<p class="text-center">Bookly is the best online platform to purchasing books.</p>
+
+<h3>Address</h3>
+<p><i class="fa fa-map-marker"></i> Near Bus Stand, Jaito</p>
+
+<h3>Email</h3>
+<p><i class="fa fa-envelope"></i> bookly@gmail.com</p>
+
+<h3>Phone</h3>
+<p><i class="fa fa-phone"></i> +91 96523 42324</p>
+</div>
+    <div class="col-md-7 p-5">
+        <form action="/insertcontact/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" name="firstname" class="form-control" placeholder="First name" />
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="lastname" class="form-control" placeholder="Last name" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone number" />
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" />
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Email address" />
+                </div>
+                <div class="col-md-12 mb-3">
+                    <textarea name="message" class="form-control" placeholder="Leave your Message"></textarea>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label>Upload Picture</label>
+                    <input type="file" class="form-control" name="pic"/>
+                </div>
+                <div class="col-md-6 mb-3 p-3">
+                    <button class="btn btn-info text-light fw-bold">Submit Now</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

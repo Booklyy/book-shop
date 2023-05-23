@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!--
+<div class="row bg-light p-5" id="review">
+    <div class="col-md-12 text-center">
+    <h2 class="text-uppercase fw-bold headings display-5"><span class="text-info">Customer's</span> Reviews</h2>
+    </div>
+    
+    <div class="row">
+    <div class="col-md-6 p-5">
+    <div class="col-md-12">
+    
+    <div class="row p-5 bgwhite">
+    <div class="col-md-2">
+    <img src="{% static 'images/pic-1.png' %}" height="80" width="100%" />
+    </div>
+    <div class="col-md-8">
+    <h4 class="fw-bold">Outstanding Technology</h4>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <p>These guys come up with new technology always, keep it up!!!</p>
+    <h6 class="fw-bold">- Karan Thakur</h6>
+    </div>
+    <div class="col-md-2">
+    <i class="fa fa-quote-right text-warning fs-1"></i>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="col-md-6 p-5">
+    <div class="col-md-12">
+    
+    <div class="row p-5 bgwhite">
+    <div class="col-md-2">
+    <img src="{% static 'images/pic-2.png' %}" height="80" width="100%" />
+    </div>
+    <div class="col-md-8">
+    <h4 class="fw-bold">Delivery on time</h4>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <i class="fa fa-star text-warning"></i>
+    <p>Delivery given to me was upto the mark and estimated time. The book was neatly packed.</p>
+    <h6 class="fw-bold">- Amandeep Kaur</h6>
+    </div>
+    <div class="col-md-2">
+    <i class="fa fa-quote-right text-warning fs-1"></i>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-md-6 p-5">
+        <div class="col-md-12">
+        
+        <div class="row p-5 bgwhite">
+        <div class="col-md-2">
+        <img src="{% static 'images/pic-4.png' %}" height="80" width="100%" />
+        </div>
+        <div class="col-md-8">
+        <h4 class="fw-bold">Amazing Discounts</h4>
+        <i class="fa fa-star text-warning"></i>
+        <i class="fa fa-star text-warning"></i>
+        <i class="fa fa-star text-warning"></i>
+        <i class="fa fa-star text-warning"></i>
+        <i class="fa fa-star text-warning"></i>
+        <p>There are amazing discounts on every book.</p>
+        <h6 class="fw-bold">- Angle</h6>
+        </div>
+        <div class="col-md-2">
+        <i class="fa fa-quote-right text-warning fs-1"></i>
+        </div>
+        </div>
+        
+        </div>
+        </div>
+
+        <div class="col-md-6 p-5">
+            <div class="col-md-12">
+            
+            <div class="row p-5 bgwhite">
+            <div class="col-md-2">
+            <img src="{% static 'images/pic-3.png' %}" height="80" width="100%" />
+            </div>
+            <div class="col-md-8">
+            <h4 class="fw-bold">Safe and Secure Website</h4>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <p>We can order books safely and securely.</p>
+            <h6 class="fw-bold">- Robin Garg</h6>
+            </div>
+            <div class="col-md-2">
+            <i class="fa fa-quote-right text-warning fs-1"></i>
+            </div>
+            </div>
+            
+            </div>
+            </div>
+
+            <div class="col-md-6 p-5">
+                <div class="col-md-12">
+                
+                <div class="row p-5 bgwhite">
+                <div class="col-md-2">
+                <img src="{% static 'images/pic-5.png' %}" height="80" width="100%" />
+                </div>
+                <div class="col-md-8">
+                <h4 class="fw-bold">Nice Book</h4>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <p>"HuckleBerry Finn"- Amazing book. Nice book. I read in my life .Best book....I read 2 or 3 times . I love this book.</p>
+                <h6 class="fw-bold">- Ajay Sharma</h6>
+                </div>
+                <div class="col-md-2">
+                <i class="fa fa-quote-right text-warning fs-1"></i>
+                </div>
+                </div>
+                
+                </div>
+                </div>
+
+                <div class="col-md-6 p-5">
+                    <div class="col-md-12">
+                    
+                    <div class="row p-5 bgwhite">
+                    <div class="col-md-2">
+                    <img src="{% static 'images/pic-6.png' %}" height="80" width="100%" />
+                    </div>
+                    <div class="col-md-8">
+                    <h4 class="fw-bold">All books available</h4>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <p>This online book shop "Bookly" is good palce for book readers mostly all type of books are available on this Platform.Thanku Bookly.</p>
+                    <h6 class="fw-bold">- Nav</h6>
+                    </div>
+                    <div class="col-md-2">
+                    <i class="fa fa-quote-right text-warning fs-1"></i>
+                    </div>
+                    </div>
+                    
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 p-5">
+                        <div class="col-md-12">
+                        
+                        <div class="row p-5 bgwhite">
+                        <div class="col-md-2">
+                        <img src="{% static 'images/pic-7.jpg' %}" height="80" width="100%" />
+                        </div>
+                        <div class="col-md-8">
+                        <h4 class="fw-bold">Book buying experience</h4>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <p>The customer management was good upto to mark and people there were friendly and helpful.If you are interested you must visit there.</p>
+                        <h6 class="fw-bold">- Jobn Singh</h6>
+                        </div>
+                        <div class="col-md-2">
+                        <i class="fa fa-quote-right text-warning fs-1"></i>
+                        </div>
+                        </div>
+                        
+                        </div>
+                        </div>
+
+                        <div class="col-md-6 p-5">
+                            <div class="col-md-12">
+                            
+                            <div class="row p-5 bgwhite">
+                            <div class="col-md-2">
+                            <img src="{% static 'images/pic-8.jpg' %}" height="80" width="100%" />
+                            </div>
+                            <div class="col-md-8">
+                            <h4 class="fw-bold">Best place to buy spiritual books</h4>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <p>Bookly is the best place to buy spiritual books at very affordable prices,
+                                I have taken bhagvathgeetha from this store for 250 only which is very minimal cost when compared with other stores and in online shopping, the book quality and size is also very good.</p>
+                            <h6 class="fw-bold">- Ruchika</h6>
+                            </div>
+                            <div class="col-md-2">
+                            <i class="fa fa-quote-right text-warning fs-1"></i>
+                            </div>
+                            </div>
+                            
+                            </div>
+                            </div>
+
+    </div> --> 
+
+
+{% endblock %}

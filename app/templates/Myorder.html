@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<div class="row p-5"  data-aos="fade-down-right">
+    <div class="col-md-12 text-center">
+        <h2 class="text-uppercase fw-bold"><span class="text-info">My</span> Orders </h2>
+    </div>
+</div>
+ 
+<div class="row p-5">
+    <table class="table">
+        <tr>
+            <th>Sr No</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Order Date</th>
+            <th>Payment Status</th>
+        </tr>
+        {% for c in c %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ c.product }}</td>
+            <td>{{ c.price }}</td>
+            <td>{{ c.quantity }}</td>
+            <td>{{ c.order.updated }}</td>
+            <td>{% if c.order.paid == True %}
+                PAID
+                {% else %}
+                NOT PAID
+                {% endif %}
+            </td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

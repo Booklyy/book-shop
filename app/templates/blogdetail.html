@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row p-5" id="blog" data-aos="fade-down-right">
+    <div class="col-md-12 text-center">
+        <h2 class="text-uppercase fw-bold"><span class="text-info">Latest</span> Blogs </h2>
+    </div>
+</div>
+
+    <div class="col-md-8 offset-2 p-3 blogs">
+
+        <h3>{{ pro.name }}</h3>
+        <img src="/media/{{ pro.photo }}" width="100%" />
+        <p class="p-3">{{ pro.description|safe }}....</p>
+        <p>{{ pro.postby }} ({{ pro.poston }})</p>
+
+    </div>
+
+</div>
+{% endblock %}

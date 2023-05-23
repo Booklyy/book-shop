@@ -1,0 +1,101 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<div class="row p-5" id="featured" data-aos="fade-down-right">
+   
+    
+    <div class="row p-5">
+    
+        
+        <div class="col-md-4 p-3">
+            <div class="col-md-12" id="featureddiv">
+                <div >
+                    <img src="/media/{{ pro.photo }}"  />
+                    
+                </div>
+                <div class="d-flex p-3">
+                 
+                    <h2 class="pe-4">&#8377;{{ pro.sellingprice }}</h2>
+                    <h5 class="text-decoration-line-through text-danger">&#8377; {{ pro.mrp }}</h5>
+                    
+                </div>
+                <form action="{% url 'cart:cart_add' pro.id %}" method="post">
+                    {% csrf_token %}
+                    {{ cart_product_form }}
+                    <input type="submit" value="add to cart" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    <div class="col-md-8">
+        <h2 class="fw-bold">{{ pro.name }}</h2>
+        <h6 >by<span class="text-danger"> {{ pro.author }} </span>(Author)</h6>
+        <div class="P-4">
+            <h4>Description</h4>
+            <p class="border border-dark p-3">{{ pro.description }}</p>
+        </div>
+        
+      </div> 
+      </div>
+        <div class="row p-5 border border-dark">
+            <div class="col-md-2 text-center">
+                <h4>Pages</h4>
+                <p>{{ pro.no_of_pages }}</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h4>Publisher</h4> 
+                <p>{{ pro.publisher}}</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h4>Publish date</h4>
+                
+                <p> <i class="fa-solid fa-calendar-days"></i> {{ pro.publishdate}}</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h4>Isbn</h4>
+                
+                <p> <i class="fa-solid fa-barcode"></i> {{ pro.isbn }}</p>
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+            {% if user.is_authenticated %}
+            <form action="/insertview/" method="post">
+                {% csrf_token %}
+                <label>Post Your Review</label>
+                <input type="hidden" name="next" value="{{ request.path }}" />
+                <input type="hidden" name="next" value="{{ user.id }}" />
+                <input type="hidden" name="next" value="{{ pro.id }}" />
+                <textarea class="form-control mb-3 pe-5" name="feedback" placeholder="Post Your Review"></textarea>
+                <!-- <input id="ratinginput" name="rating" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="2" />
+                <div class="pt-4"> -->
+                <div class="row" id="starow">
+                    <div class="col-md-12">
+                        <input class="star star-5" id="star-5" type="radio" value="5" name="rating" />
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="star-4" type="radio" value="4" name="rating" />
+                        <label class="star star-4" for="star-4"></label>
+                        <input class="star star-3" id="star-3" type="radio" value="3" name="rating" />
+                        <label class="star star-3" for="star-3"></label>
+                        <input class="star star-2" id="star-2" type="radio" value="2" name="rating" />
+                        <label class="star star-2" for="star-2"></label>
+                        <input class="star star-1" id="star-1" type="radio" value="1" name="rating" />
+                        <label class="star star-1" for="star-1"></label>
+                    </div>
+                </div><br/>
+                <div class="ps-3">
+                    <button type="submit" class="btn text-light fs-4" id="btncart">Post</button>
+                </div>
+            </form>
+            {% else %}
+            <a href="/signup/?next={{ request.path }}" class="btn">Give Review</a>
+            {% endif %}
+        </div>
+
+
+        
+
+
+</div>
+
+{% endblock %}

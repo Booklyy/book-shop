@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row p-4" data-aos="fade-down-right">
+    <div class="col-md-12 text-center">
+        <h2 class="text-uppercase fw-bold"><span class="text-info">Login</span> Form </h2>
+    </div>
+</div>
+<div class="row ps-4">
+    <div class="row p-5" id="bg1">
+        
+        <div class="col-md-12 p-5 text-center">
+            <form method="post" id="loginform">
+                <h2><i class="fa fa-user"></i> LOGIN</h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-info btnlogin">Login</button>
+                
+            </form>
+        </div>    
+    </div>
+</div>
+
+<!--
+<div class="row pt-3" data-aos="fade-down-right">
+    <div class="col-md-12 text-center">
+        <h2 class="text-uppercase fw-bold"><span class="text-info">Login</span> Form </h2>
+    </div>
+</div>
+<div class="row p-3 text-center">
+    <div class="col-md-8 offset-2">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <button class="btn btn-info">LOGIN</button>
+        </form>
+    </div>
+</div> -->
+
+{% endblock  %} 

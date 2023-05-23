@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row p-4" data-aos="fade-down-right">
+    <div class="col-md-12 text-center">
+        <h2 class="text-uppercase fw-bold"><span class="text-info">Registration</span> Form </h2>
+    </div>
+</div>
+<div class="row p-3 text-center" id="bg1">
+    <div class="col-md-8 offset-2">
+        <form method="post" id="loginform">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="col-md-12 p-3">
+            <label>{{field.label}}</label>
+            {{field}}
+
+            {% for error in field.errors %}
+            <p class="text-info">{{error}}</p>
+            {% endfor %}
+            </div>
+            {% endfor %}
+
+            
+            <button class="btn btn-info text-center text-light fw-bold ">Register Now</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock  %}
